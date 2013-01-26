@@ -8,7 +8,14 @@
    <title>FxOS CandelStick</title>
        
        <script type="text/javascript">
-           function draw() {
+           
+           function drawRetangle( ctx, x,y,w,h color)
+           {
+               ctx.fillStyle = color;
+               ctx.fillRect (x, y, w, h);
+
+           }
+           function drawold() {
                var canvas = document.getElementById('canvas');
                if (canvas.getContext) {
                    var ctx = canvas.getContext("2d");
@@ -18,6 +25,14 @@
                    
                    ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
                    ctx.fillRect (30, 30, 55, 50);
+               }
+           }
+           function draw() {
+               var canvas = document.getElementById('canvas');
+               if (canvas.getContext) {
+                   drawRetangle(10,10,10,20,"rgb(200,0,0)");
+                   drawRetangle(30,10,10,30,"rgb(0,200,0)")
+                   
                }
            }
            </script>
