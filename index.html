@@ -30,8 +30,9 @@
            function draw() {
                var canvas = document.getElementById('canvas');
                if (canvas.getContext) {
-                   drawRetangle(10,10,10,20,"rgb(200,0,0)");
-                   drawRetangle(30,10,10,30,"rgb(0,200,0)")
+                    var ctx = canvas.getContext("2d");
+                   drawRetangle(ctx,10,10,10,20,"rgb(200,0,0)");
+                   drawRetangle(ctx,30,10,10,30,"rgb(0,200,0)")
                    
                }
            }
