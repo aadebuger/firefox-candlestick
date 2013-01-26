@@ -9,17 +9,27 @@
        
        <script type="text/javascript">
            
-           function drawCandle(ctx,x,y,w,h,h1,h2,color)
+           function drawCandle(ctx,x,y,w,h,h1,h2,color,color1)
            {
                ctx.fillStyle = color;
                ctx.fillRect (x, y, w, h);
                ctx.beginPath();
-               ctx.strokeStyle='#00cc00';
+               ctx.strokeStyle=color1;
                ctx.lineWidth=2;
                ctx.moveTo(x+w/2,y);
                ctx.lineTo(x+w/2,y-h1);
                 ctx.closePath()
                ctx.stroke();
+               
+               ctx.beginPath();
+               ctx.strokeStyle=color1;
+               ctx.lineWidth=2;
+               ctx.moveTo(x+w/2,y+h);
+               ctx.lineTo(x+w/2,y+h+h2);
+               ctx.closePath()
+               ctx.stroke();
+               
+               
            }
            function drawRetangle( ctx, x,y,w,h,color)
            {
@@ -44,7 +54,7 @@
                if (canvas.getContext) {
                     var ctx = canvas.getContext("2d");
                    //drawRetangle(ctx,10,10,10,20,"rgb(255,0,0)");
-                     drawCandle(ctx,10,10,10,20,5,5,"rgb(200,0,0)");
+                     drawCandle(ctx,10,10,10,20,5,5,"rgb(200,0,0)",color1);
                    
                      //drawRetangle(ctx,30,10,10,30,"rgb(0,255,0)")
                    
